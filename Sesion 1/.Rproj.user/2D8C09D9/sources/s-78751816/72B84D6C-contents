@@ -1,0 +1,410 @@
+---
+title: "Sesión práctica 2 - La historia de mi vida - Análisis matemático (GCD)"
+author: "ESTUDIANTES"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+header-includes:
+- \usepackage[spanish]{babel}
+- \usepackage{tcolorbox,tikz,calc,color,listings}
+- \newtcolorbox{commandsbox}{={yshift=-8pt},colback=blue!5!white,colframe=blue!75!black,fonttitle=\bfseries,colbacktitle=blue!85!black,title=commandos
+  de R,width=1.2\textwidth}
+documentclass: memoir
+toc: yes
+---
+<!--
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+-->
+---
+\newpage
+
+Una serie de televisión es un programa de televisión que tiene múltiples episodios diferentes que comparten personajes y situaciones y tal vez una historia común. Bueno, aunque la serie aún no ha sido retransmitida en la televisión, la serie de televisión de la historia de mi vida ha sido creada, así que déjame contarte más sobre ella...
+\vspace*{\fill}
+
+
+\begin{commandsbox}
+    \begin{center}
+        \begin{tabular}[t]{p{5cm}p{8cm}}
+            Define una función     & 
+\Verb!myfunction <- function(x) sin(x)! \\
+            Representa una función       &                                         
+            \vspace{-5mm}
+\begin{lstlisting}[language=R]
+myfunction <- function(x) sin(x)
+curve(myfunction, -8, 7, n = 2000)
+\end{lstlisting}\\
+            Representa una función        &                                         
+            \vspace{-5mm}
+\begin{lstlisting}[language=R]
+myfunction <- function(x) sin(x)
+plot (myfunction, -8, 7)
+\end{lstlisting}      \\
+Crea un vector que contiene los primeros 4 elementos de una sucesión & \vspace{-5mm}
+\begin{lstlisting}[language=R]
+a=numeric(0)
+for (j in 1:4){
+a[j]=3*(length(a)+1)
+}
+\end{lstlisting}\\
+Crea un vector que contiene los primeros 4 elementos de una sucesión & \vspace{-5mm}
+\begin{lstlisting}[language=R]
+b=numeric(1)
+b[1]=3
+for (j in 2:4){
+b[j]=3+b[j-1]
+}
+\end{lstlisting}\\
+Suma los elementos del vector  & 
+\Verb!sum(a)!
+        \end{tabular}
+    \end{center}
+\end{commandsbox}
+
+
+
+
+
+# Problema 1
+## Episodio 01 -- The story of my life (Piloto)
+
+**Plot:** *En el episodio piloto, se repasa una breve reseña de mi vida siguiendo ``One Direction''. Le pedí a algunos amigos que escribieran una canción de introducción para la serie. Como inspiración les dije que la intensidad de mi vida ha seguido el patrón de la función*
+\[
+y = -3.608948 + 5.738607*x - 2.675965*x^2 + 0.5679287*x^3 - 0.05576629*x^4 + 0.002045008*x^5
+\]
+*Así que se les ocurrió la siguiente canción:*
+```
+            Written in these walls are the stories that I can't explain
+            I leave my heart open but it stays right here empty for days
+            She told me in the morning
+            She doesn't feel the same about us in her bones
+            It seems to me that when I die
+            These words will be written on my stone
+            And I'll be gone, gone tonight
+            The ground beneath my feet is open wide
+            The way that I been holdin' on too tight
+            With nothing in between
+            The story of my life, I take her home
+            I drive all night to keep her warm and time
+            Is frozen (the story of, the story of, the story of
+            The story of my life, I give her hope
+            I spend her love until she's broke inside
+            The story of my life (the story of, the story of)
+            Written on these walls are
+            The colors that I can't change
+            Leave my heart open
+            But it stays right here in its cage
+            I know that in the morning now
+            I see us in the light upon a hill
+            Although I am broken, my heart is untamed, still
+            And I'll be gone, gone tonight
+            The fire beneath my feet is burning bright
+            The way that I've been holdin' on so tight
+            With nothing in between
+            The story of my life, I'll take her home
+            I drive all night to keep her warm and time
+            Is frozen (the story of, the story of)
+            The story of my life, I give her hope
+            I spend her love until she's broke inside
+            The story of my life (the story of, the story of)
+            And I've been waiting for this time to come around
+            But, baby, running after you is like chasing the clouds
+            The story of my life
+            I take her home
+            I drive all night
+            To keep her warm and time
+            Is frozen
+            The story of my life, I give her hope (give her hope)
+            I spend her love until she's broken inside
+            The story of my life (the story of, the story of)
+            The story of my life
+            The story of my life (the story of, the story of)
+            The story of my life
+```
+![Representación de la onda de la canción "Story of My Life"](WaveformStoryOfMyLife.png)
+
+Representa la función que modela la intensidad de mi vida para $t$ entre 0 y 10 y compárala con la forma de onda de la canción para decidir si mis amigos compusieron una buena canción para la serie.
+
+* \color{blue} Define la función $f(x)$,
+* Representa la función $f(x)$.\color{black}
+
+<!--
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% SOLUCIÓN Problema 1 %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-->
+**Solución:** 
+```{r}
+f <- function(x) -3.608948 + 5.738607*x - 2.675965*x^2 + 0.5679287*x^3 - 0.05576629*x^4 + 0.002045008*x^5
+plot(f,0,10)
+```
+
+
+<!--
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% FINAL DE LA SOLUCIÓN  %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-->
+
+# Problema 2
+## Episodio 02 -- Los buenos y malos momentos
+```{r}
+f1 <- function(x) cos(x)
+g <- function(x) sin(x)
+f2 <- function(x) g(x+pi/2)
+plot(f1,0,10)
+plot(f2,0,10)
+#Si que son iguales
+```
+
+**Plot** *Cuando me casé, mi esposa y yo comenzamos a compartir todos los momentos buenos y malos, o eso creemos...*
+        
+Toda mi vida mis buenos y malos momentos se han repetido usando un patrón fijo, incluso diría que aparecieron periódicamente. Aquí hay una función que representa los momentos buenos y malos de mi vida
+\[
+f1(x)=\cos(x)
+\]
+        
+Mi mujer siempre ha tenido el mismo sentimiento, pero la función que representa sus momentos buenos y malos es diferente.
+\[
+g(x)=\sin(x)
+\]
+	En ambas funciones, la variable $x$ representa el tiempo en radiantes (eso significa $2\pi$=una vuelta alrededor del sol=un año desde nuestro propio punto de partida $0$. Sin embargo, mi esposa nació 3 meses después de mí (es decir $\pi/2$ para nuestra medida). Por lo tanto, para comparar las funciones, necesitamos  adaptarlas.
+
+        
+Por favor, ¿puedes verificar si estamos en lo correcto y cumplimos el contrato, "en lo bueno y en lo malo en la salud y en la enfermedad en la riqueza y en la pobreza" o no?
+         
+* Escribe la función $f2(x)$ que es la función $g(x)$ desplazada por $\pi/2$,
+* \color{blue}Define las funciones $f1(x)$ y $f2(x)$,
+* Representa cada una de las funciones $f1(x)$ y $f2(x)$,\color{black}
+* Decide si las funciones son iguales o no.
+
+<!--
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% SOLUCIÓN PROBLEMA 2  %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-->
+
+**Solución:**
+
+
+
+
+<!--
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% FINAL DE LA SOLUCIÓN  %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-->
+
+# Problema 3
+## Episodio 03 -- Sucesiones
+
+**Plot:** *En este episodio se introducen algunos personajes que agregan más complejidad a la historia y se eliminan otros. Esto hace que los problemas se multipliquen  a medida que pasa el tiempo...*
+
+Para las siguientes sucesiones:
+
+* Estudia el patrón subyacente y encuentra los primeros 10 términos de la sucesión,
+* Encuentra el término general de la sucesión
+\[
+a_1=  ,\, \, \, a_n=
+\]
+* Describe el tipo de sucesión (aritmética, geométrica, recursiva o ninguna de ellas),
+* Estudia la monotonicidad de la sucesion,
+* Estudia la convergencia de la sucesion.
+        
+\begin{itemize}
+\item[(a)] $a_1= 3,\, 1,\, -1,\, -3,\, -5$ 
+\item[(b)] $b_1= 3,\, 0.3,\, 0.03,\, 0.003,\, 0.0003 $ 
+\item[(c)] $c_1= 2,\, -6,\, 18,\, -54,\, 162  $ 
+\item[(d)] $d_1= 2,\, 5,\, 11,\, 23,\, 47 $ 
+\item[(e)] $e_1= 5,\, -6,\, 5,\, -6,\, 5$ 
+\item[(f)] $f_1= -\frac{3}{2},\, -1,\, -\frac{1}{2},\,  0,\, \frac{1}{2} $ 
+\end{itemize}
+        
+<!--
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% SOLUCIÓN PROBLEMA 3  %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-->
+
+**Solución:**
+
+**(a)**
+
+El patrón es que restamos 2
+\[
+a_1= 3,\, 1,\, -1,\, -3,\, -5, -7, \, -9, -11, -13, -15,\ldots \hspace{1cm}a_n=3-(n-1)*2
+\]
+Es una sucesión aritmética con diferencia $d=-2$. Es estrictamente decreciente y diverge a $-\infty$.
+
+**(b)**
+
+El patrón es que dividimos por 10
+\[
+b_1= 3,\, 0.3,\, 0.03,\, 0.003,\, 0.0003,\, 0.00003,\, 0.000003\, 0.0000003\, 0.00000003\, 0.000000003 \ldots
+\]
+\[
+b_n=\frac{3}{10^{n-1}}
+\]
+Es una sucesión geométrica con razón $r=\frac{1}{10}$. Es estrictamente decreciente y convergente  a $0$.
+
+
+<!--
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% FINAL DE LA SOLUCIÓN  %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-->
+
+# Problema 4
+## Episodio 04 -- Divergente
+
+**Plot:** *Toda mi vida he sentido que me dirigía a un punto importante, y que me estaba acercando y acercando, aunque aún no he llegado.*
+
+Estudia si las siguientes series son convergentes. Para esto:
+
+* \color{blue}Encuentra la suma de los primeros 10, 50 y 100 términos,\color{black}
+*  Decide intuitivamente si la serie es convergente o no,
+* Demuestra que la serie es convergente o divergente.
+
+\begin{itemize}
+\item[(a)] $\sum_{n=1}^\infty n!$ 
+\item[(b)] $\sum_{n=1}^\infty\frac{3^n}{4^n+4}$ 
+\item[(c)] $\sum_{n=1}^\infty \frac{2}{n}$ 
+\item[(d)] $\sum_{n=1}^\infty\frac{n!}{2e^n}$ 
+\item[(e)] $\sum_{n=1}^\infty\frac{3}{n^\frac{4}{5}}$ 
+\item[(f)] $\sum_{n=1}^\infty \frac{10}{(-4)^n}$ 
+\item[(g)] $\sum_{n=1}^\infty \frac{(-1)^n}{3^n+1}$ 
+\end{itemize}
+
+<!--
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% SOLUCIÓN PROBLEMA 4  %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-->
+
+**(a)**
+```{r}
+a=numeric(0)
+for(n in 1:100){
+  a[n]=factorial(n)
+}
+sum(a[1:10])
+sum(a[1:50])
+sum(a[1:100])
+```
+
+**Solución:**
+La serie diverge porque $lim_{n\to\infty}n!=\infty$.
+
+
+**(b)**
+```{r}
+b=numeric(0)
+for(n in 1:100){
+  b[n]=3^n/(4^n+4)
+}
+sum(b[1:10])
+sum(b[1:50])
+sum(b[1:100])
+```
+**Solución:**
+La serie parece converger. 
+\[
+\sum_{n=1}^\infty\frac{3^n}{4^n+4}<\sum_{n=1}^\infty\frac{3^n}{4^n}=\sum_{n=1}^\infty\Big(\frac{3}{4}\Big)<\infty
+\]
+donde la última desigualdad se verifica porque es una serie geométrica con razon $3/4<1$.
+
+
+
+<!--
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% FINAL DE LA SOLUCIÓN  %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-->
+
+# Problema 5
+## Episodio 05 -- Las leyes de la naturaleza
+
+Con las respuestas anteriores rellena la siguiente tabla.
+\begin{itemize}
+\item[(a)] $f_6$ en el problema 3,
+\item[(d)] Número de series convergentes en el problema 4,
+\item[(f)] $f_{20}$ en el problema 3.
+\item[(l)] $c_5$ en el problema 3 restandole 18,
+\end{itemize}
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+  a & b & c & d & e & f & g  & h  & i & j  & k  & l & m   \\\hline
+    & 1 & 2 &   & 5 &   & 13 & 21 &   & 55 & 89 &   & 233 \\\hline
+\end{tabular}\\
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+	n   & ñ  & o   & p    & q    & r    & s & t     & u     & v     & w     & x & y        & z \\\hline
+  377 & 610 & 987 & 1597 & 2584 & 4181 &   & 10946 & 17711 & 28657 & 46368 &   & 121393 &   \\\hline
+\end{tabular}
+\end{table}
+Los huecos en la tabla siguen el patrón de una sucesión recursiva bien conocida donde cada término se obtiene utilizando los dos términos anteriores. Escribe la recurrencia de la sucesión:
+<!--
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% SOLUCIÓN PROBLEMA  5A  %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-->
+
+**Solución:**
+\[
+a_1=, \, \, a_2=, \, \, a_n
+\]
+
+
+<!--
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% FINAL DE LA SOLUCIÓN  %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-->
+
+sustituye cada letra con los números apropiados y descubre la siguiente frase clásica
+
+\begin{center}
+{\large \underline{21}\,\underline{1}\,\underline{6765}\,\underline{10946}\,\underline{1}
+  \,\,\,
+  \underline{5}\,\underline{144}
+  \,\,\,
+  \underline{34}\,\underline{377}\,\underline{8}\,\underline{34}\,\underline{377}\,\underline{34}\,\underline{10946}\,\underline{987}
+  \,\,\,
+  \underline{121393}
+  \,\,\,
+  \underline{233}\,\underline{1}\,\underline{6765}\,
+  \,\,\,
+  \underline{1}\,\underline{144}\,\underline{144}\,\underline{1}
+}
+\end{center}
+ 
+<!--
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% SOLUCIÓN PROBLEMA 5B  %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-->
+**Solución:**
+\begin{center}
+{\huge \underline{\, }\,\underline{\, }\,\underline{\, }\,\underline{\, }\,\underline{\, }
+  \,\,\,
+  \underline{\, }\, \underline{\, }
+  \,\,\,
+  \underline{\, }\,\underline{\, }\,\underline{\, }\,\underline{\, }\,\underline{\, }\,\underline{\, }\,\underline{\, }\,\underline{\, }
+  \,\,\,
+  \underline{\, }\,
+  \,\,\,
+  \underline{\, }\,\underline{\, }\,\underline{\, }\,
+  \,\,\,
+  \underline{\, }\,\underline{\, }\,\underline{\, }\,\underline{\, }
+}
+\end{center}
+<!--
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% END OF SOLUTION  %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-->

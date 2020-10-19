@@ -1,0 +1,4 @@
+"0","f1 <- function(x) cos(x)"
+"0","g <- function(x) sin(x)"
+"0","f2 <- function(x) g(x+pi/2)"
+"0","plot(f1,0,10)"
