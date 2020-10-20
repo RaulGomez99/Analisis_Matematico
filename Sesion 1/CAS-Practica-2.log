@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.12)  19 OCT 2020 19:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.20)  20 OCT 2020 14:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1312,40 +1312,42 @@ e pdf)
 Package pdftex.def Info: CAS-Practica-2_files/figure-latex/unnamed-chunk-1-1.pd
 f  used on input line 258.
 (pdftex.def)             Requested size: 340.99731pt x 236.07506pt.
-LaTeX Info: Redefining \. on input line 261.
-LaTeX Info: Redefining \% on input line 261.
+LaTeX Info: Redefining \. on input line 267.
+LaTeX Info: Redefining \% on input line 267.
 [5 <./CAS-Practica-2_files/figure-latex/unnamed-chunk-1-1.pdf>] [6
 
-]
-<CAS-Practica-2_files/figure-latex/unnamed-chunk-2-1.pdf, id=142, 469.755pt x 3
+] [7]
+<CAS-Practica-2_files/figure-latex/unnamed-chunk-2-1.pdf, id=148, 469.755pt x 3
 25.215pt>
 File: CAS-Practica-2_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file (typ
 e pdf)
 <use CAS-Practica-2_files/figure-latex/unnamed-chunk-2-1.pdf>
 Package pdftex.def Info: CAS-Practica-2_files/figure-latex/unnamed-chunk-2-1.pd
-f  used on input line 276.
+f  used on input line 320.
 (pdftex.def)             Requested size: 340.99731pt x 236.07506pt.
-[7 <./CAS-Practica-2_files/figure-latex/unnamed-chunk-2-1.pdf>]
-<CAS-Practica-2_files/figure-latex/unnamed-chunk-2-2.pdf, id=153, 469.755pt x 3
+<CAS-Practica-2_files/figure-latex/unnamed-chunk-2-2.pdf, id=149, 469.755pt x 3
 25.215pt>
 File: CAS-Practica-2_files/figure-latex/unnamed-chunk-2-2.pdf Graphic file (typ
 e pdf)
 <use CAS-Practica-2_files/figure-latex/unnamed-chunk-2-2.pdf>
 Package pdftex.def Info: CAS-Practica-2_files/figure-latex/unnamed-chunk-2-2.pd
-f  used on input line 284.
+f  used on input line 328.
 (pdftex.def)             Requested size: 340.99731pt x 236.07506pt.
-LaTeX Info: Redefining \. on input line 320.
-LaTeX Info: Redefining \% on input line 320.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 330.
+LaTeX Info: Redefining \% on input line 330.
 
 Overfull \vbox (0.80502pt too high) has occurred while \output is active []
 
-[8 <./CAS-Practica-2_files/figure-latex/unnamed-chunk-2-2.pdf>]
-LaTeX Info: Redefining \. on input line 331.
-LaTeX Info: Redefining \% on input line 331.
-[9] [10
+[8 <./CAS-Practica-2_files/figure-latex/unnamed-chunk-2-1.pdf>]
+LaTeX Info: Redefining \. on input line 337.
+LaTeX Info: Redefining \% on input line 337.
+[9 <./CAS-Practica-2_files/figure-latex/unnamed-chunk-2-2.pdf>] [10
 
 ] [11]
-Overfull \hbox (36.11047pt too wide) detected at line 382
+Overfull \hbox (36.11047pt too wide) detected at line 388
 \OML/lmm/m/it/10 b[] \OT1/lmr/m/n/10 = 3\OML/lmm/m/it/10 ;  \OT1/lmr/m/n/10 0[]
 3\OML/lmm/m/it/10 ;  \OT1/lmr/m/n/10 0[]03\OML/lmm/m/it/10 ;  \OT1/lmr/m/n/10 0
 []003\OML/lmm/m/it/10 ;  \OT1/lmr/m/n/10 0[]0003\OML/lmm/m/it/10 ;  \OT1/lmr/m/
@@ -1353,42 +1355,77 @@ n/10 0[]00003\OML/lmm/m/it/10 ;  \OT1/lmr/m/n/10 0[]000003 0[]0000003 0[]000000
 03 0[]000000003 []
  []
 
-LaTeX Info: Redefining \. on input line 388.
-LaTeX Info: Redefining \% on input line 388.
+
+Overfull \hbox (26.16086pt too wide) detected at line 395
+\OML/lmm/m/it/10 c[] \OT1/lmr/m/n/10 = 2\OML/lmm/m/it/10 ;  \OMS/lmsy/m/n/10 ^^
+@\OT1/lmr/m/n/10 6\OML/lmm/m/it/10 ;  \OT1/lmr/m/n/10 18\OML/lmm/m/it/10 ;  \OM
+S/lmsy/m/n/10 ^^@\OT1/lmr/m/n/10 54\OML/lmm/m/it/10 ;  \OT1/lmr/m/n/10 162\OML/
+lmm/m/it/10 ; \OMS/lmsy/m/n/10 ^^@\OT1/lmr/m/n/10 486\OML/lmm/m/it/10 ;  \OT1/l
+mr/m/n/10 1458\OML/lmm/m/it/10 ; \OMS/lmsy/m/n/10 ^^@\OT1/lmr/m/n/10 4374\OML/l
+mm/m/it/10 ; \OT1/lmr/m/n/10 13122\OML/lmm/m/it/10 ; \OMS/lmsy/m/n/10 ^^@\OT1/l
+mr/m/n/10 39366\OML/lmm/m/it/10 ; []  c[] \OT1/lmr/m/n/10 = 2 \OMS/lmsy/m/n/10 
+^^C \OT1/lmr/m/n/10 (3[])
+ []
+
+
+Overfull \hbox (15.7083pt too wide) detected at line 400
+\OML/lmm/m/it/10 d[] \OT1/lmr/m/n/10 = 2\OML/lmm/m/it/10 ;  \OT1/lmr/m/n/10 5\O
+ML/lmm/m/it/10 ;  \OT1/lmr/m/n/10 11\OML/lmm/m/it/10 ;  \OT1/lmr/m/n/10 23\OML/
+lmm/m/it/10 ;  \OT1/lmr/m/n/10 47\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 95\OML/lmm/
+m/it/10 ;  \OT1/lmr/m/n/10 191\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 383\OML/lmm/m/
+it/10 ; \OT1/lmr/m/n/10 767\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 1535\OML/lmm/m/it
+/10 ; []  d[] \OT1/lmr/m/n/10 = 2 \OML/lmm/m/it/10 d[] \OT1/lmr/m/n/10 = \OML/l
+mm/m/it/10 d[] \OMS/lmsy/m/n/10 ^^C \OT1/lmr/m/n/10 2 + 1
+ []
+
+LaTeX Info: Redefining \. on input line 413.
+LaTeX Info: Redefining \% on input line 413.
 
 Overfull \vbox (0.80502pt too high) has occurred while \output is active []
 
 [12] [13
 
 ]
-LaTeX Info: Redefining \. on input line 501.
-LaTeX Info: Redefining \% on input line 501.
+LaTeX Info: Redefining \. on input line 535.
+LaTeX Info: Redefining \% on input line 535.
 
 Overfull \vbox (0.80502pt too high) has occurred while \output is active []
 
 [14]
-Overfull \hbox (81.6671pt too wide) in paragraph at lines 522--527
- [][] 
- []
-
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 558.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 558.
-[15
-
-]
-LaTeX Info: Redefining \. on input line 572.
-LaTeX Info: Redefining \% on input line 572.
+LaTeX Info: Redefining \. on input line 606.
+LaTeX Info: Redefining \% on input line 606.
+[15]
+LaTeX Info: Redefining \. on input line 674.
+LaTeX Info: Redefining \% on input line 674.
 
 Overfull \vbox (0.80502pt too high) has occurred while \output is active []
 
 [16]
+LaTeX Info: Redefining \. on input line 732.
+LaTeX Info: Redefining \% on input line 732.
+[17] [18
+
+]
+Overfull \hbox (81.6671pt too wide) in paragraph at lines 753--758
+ [][] 
+ []
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <17.28> on input line 790.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 790.
+[19]
+LaTeX Info: Redefining \. on input line 806.
+LaTeX Info: Redefining \% on input line 806.
+
+Overfull \vbox (0.80502pt too high) has occurred while \output is active []
+
+[20]
 
 Class memoir Warning: The material used in the headers is too large
 (12.80502pt) for the given head height (12.0pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 573.
+(in both cases you will find help in the memoir manual). on input line 807.
 
 \tf@toc=\write9
 \openout9 = `CAS-Practica-2.toc'.
@@ -1404,13 +1441,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 29235 strings out of 481847
- 512732 string characters out of 5928728
- 998953 words of memory out of 5000000
+ 29239 strings out of 481847
+ 512760 string characters out of 5928728
+ 998759 words of memory out of 5000000
  45036 multiletter control sequences out of 15000+600000
  612791 words of font info for 91 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 76i,13n,88p,637b,2381s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,13n,96p,637b,2381s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/Raul/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.en
 c}{c:/Users/Raul/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathi
 t.enc}{c:/Users/Raul/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-m
@@ -1438,10 +1475,10 @@ ul/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy7.pfb><c:/Users
 sers/Raul/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb><
 c:/Users/Raul/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.
 pfb>
-Output written on CAS-Practica-2.pdf (18 pages, 381078 bytes).
+Output written on CAS-Practica-2.pdf (22 pages, 390284 bytes).
 PDF statistics:
- 294 PDF objects out of 1000 (max. 8388607)
- 244 compressed objects within 3 object streams
- 58 named destinations out of 1000 (max. 500000)
+ 312 PDF objects out of 1000 (max. 8388607)
+ 258 compressed objects within 3 object streams
+ 62 named destinations out of 1000 (max. 500000)
  121 words of extra memory for PDF output out of 10000 (max. 10000000)
 

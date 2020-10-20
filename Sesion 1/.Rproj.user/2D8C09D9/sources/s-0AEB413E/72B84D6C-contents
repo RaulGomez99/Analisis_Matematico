@@ -140,6 +140,7 @@ Representa la función que modela la intensidad de mi vida para $t$ entre 0 y 10
 ```{r}
 f <- function(x) -3.608948 + 5.738607*x - 2.675965*x^2 + 0.5679287*x^3 - 0.05576629*x^4 + 0.002045008*x^5
 plot(f,0,10)
+#No se parece en nada
 ```
 
 
@@ -151,14 +152,7 @@ plot(f,0,10)
 
 # Problema 2
 ## Episodio 02 -- Los buenos y malos momentos
-```{r}
-f1 <- function(x) cos(x)
-g <- function(x) sin(x)
-f2 <- function(x) g(x+pi/2)
-plot(f1,0,10)
-plot(f2,0,10)
-#Si que son iguales
-```
+
 
 **Plot** *Cuando me casé, mi esposa y yo comenzamos a compartir todos los momentos buenos y malos, o eso creemos...*
         
@@ -189,7 +183,14 @@ Por favor, ¿puedes verificar si estamos en lo correcto y cumplimos el contrato,
 
 **Solución:**
 
-
+```{r}
+f1 <- function(x) cos(x)
+g <- function(x) sin(x)
+f2 <- function(x) g(x+pi/2)
+plot(f1,0,10)
+plot(f2,0,10)
+#Si que son iguales
+```
 
 
 <!--
@@ -250,6 +251,29 @@ b_n=\frac{3}{10^{n-1}}
 \]
 Es una sucesión geométrica con razón $r=\frac{1}{10}$. Es estrictamente decreciente y convergente  a $0$.
 
+**(c)**
+\[
+c_1= 2,\, -6,\, 18,\, -54,\, 162, -486, \, 1458, -4374, 13122, -39366,\ldots \hspace{1cm}c_n=2*(3^{n-1})
+\]
+Es una sucesión geométrica con razón $r=-3$. No es ni creciente ni decreciente y es divergente
+
+**(d)**
+\[
+d_1= 2,\, 5,\, 11,\, 23,\, 47, 95, \, 191, 383, 767, 1535,\ldots \hspace{1cm}d_1=2\hspace{1cm}d_n=d_{n-1}*2+1
+\]
+Es una sucesión recursiva. Estrictamente creciente converge a $\infty$
+
+**(e)**
+\[
+e_1= 5,\, -6,\, 5,\, -6,\, 5, -6, \, 5, -6, 5, -6,\ldots \hspace{1cm}e_n=5,5*(-1)^{n-1}-0,5
+\]
+Es una sucesión de ningún tipo . Ni crece ni decrece y es divergente
+
+**(f)**
+\[
+f_1= -\frac{3}{2},\, -1,\, -\frac{1}{2},\, 0,\, \frac{1}{2}, 1, \, \frac{3}{2}, 2, \frac{5}{2}, 3,\ldots \hspace{1cm}f_n=-\frac{3}{2}+\frac{n-1}{2}
+\]
+Es una sucesión aritmetica con diferencia de $d=\frac{1}{2}$. Es estrictamente creciente y converge en $\infty$
 
 <!--
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -316,7 +340,95 @@ La serie parece converger.
 \]
 donde la última desigualdad se verifica porque es una serie geométrica con razon $3/4<1$.
 
+**(c)**
+```{r}
+c = numeric(0)
+for(n in 1:100){
+  c[n] = 2/n;
+}
+sum(c[1:10])
+sum(c[1:50])
+sum(c[1:100])
+```
+Es una p serie con $n^p$ donde $p<=1$ por lo cual es divergente
 
+**(d)**
+```{r}
+d = numeric(0)
+for(n in 1:100){
+  d[n] = factorial(n)/(2*exp(n))
+}
+
+sum(d[1:10])
+sum(d[1:50])
+sum(d[1:100])
+```
+Según el criterio d’Alembert utilizando la siguiente formula:
+\[
+lim_{n\to\infty}\frac{a_{k+1}}{a_k}
+\]
+se nos quedaría así:
+\[
+lim_{n\to\infty}\frac{\frac{(n+1)!}{2*e^{n+1}}}{\frac{n!}{2*e^n}} = lim_{n\to\infty}\frac{n+1}{2*e} = \frac{\infty+1}{2*e} = \infty
+\]
+Como $\infty > 1$ podemos concluir que la serie diverge
+
+**(e)**
+```{r}
+e = numeric(0)
+for(n in 1:100){
+  e[n] = 3/n^(4/5);
+}
+sum(e[1:10])
+sum(e[1:50])
+sum(e[1:100])
+```
+Es una p serie con $n^p$ donde $p<=1$ por lo cual es divergente
+
+**(f)**
+```{r}
+f = numeric(0)
+for(n in 1:100){
+  f[n] = 10/(-4)^n
+}
+sum(f[1:10])
+sum(f[1:50])
+sum(f[1:100])
+```
+Tiene pinta de que converge a -2
+
+Según el criterio d’Alembert utilizando la siguiente formula:
+\[
+lim_{n\to\infty}\frac{a_{k+1}}{a_k}
+\]
+se nos quedaría así:
+\[
+lim_{n\to\infty}\frac{\frac{10}{(-4)^{n+1}}}{\frac{10}{(-4)^n}} = lim_{n\to\infty}-\frac{1}{4} = -\frac{1}{4}
+\]
+Como $\frac{1}{4} < 1$ podemos concluir que la serie converge
+
+**(g)**
+
+
+```{r}
+g = numeric(0)
+for(n in 1:100){
+  g[n] = (-1)^n/(3^n+1)
+}
+sum(g[1:10])
+sum(g[1:50])
+sum(g[1:100])
+```
+Según el criterio d’Alembert utilizando la siguiente formula:
+\[
+lim_{n\to\infty}\frac{a_{k+1}}{a_k}
+\]
+se nos quedaría así:
+\[
+lim_{n\to\infty}\frac{\frac{(-1)^{n+1}}{(3)^{n+1}+1}}{\frac{(-1)^n}{3^n+1}} = lim_{n\to\infty}-\frac{1}{3} = -\frac{1}{3}
+\]
+Como $\frac{1}{3} < 1$ podemos concluir que la serie converge
+**(h)**
 
 <!--
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -355,8 +467,16 @@ Los huecos en la tabla siguen el patrón de una sucesión recursiva bien conocid
 -->
 
 **Solución:**
+a = 1
+d = 3
+f = 8
+l = 144
+s = 6765
+x = 75025
+z = 196418
+Es la sucesión de Fibonacci
 \[
-a_1=, \, \, a_2=, \, \, a_n
+a_1=1, \, \, a_2=1, \, \, a_n = a_{n-2}+a_{n-1}
 \]
 
 
@@ -403,6 +523,7 @@ sustituye cada letra con los números apropiados y descubre la siguiente frase c
   \underline{\, }\,\underline{\, }\,\underline{\, }\,\underline{\, }
 }
 \end{center}
+Hasta el infinito y mas alla
 <!--
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%% END OF SOLUTION  %%%%%%%%%%%%%%%%%%%%%%%%
